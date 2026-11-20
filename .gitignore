@@ -1,0 +1,14 @@
+*.bak
+*.mdf
+*.ldf
+*.sqlplan
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pfx
+*.key
+*.pem
+secrets.*
+connectionstrings.*

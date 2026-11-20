@@ -1,0 +1,14 @@
+erDiagram
+    BRANCHES ||--o{ EMPLOYEES : employs
+    BRANCHES ||--o{ RESTAURANT_ORDERS : receives
+    CUSTOMERS o|--o{ RESTAURANT_ORDERS : places
+    EMPLOYEES o|--o{ RESTAURANT_ORDERS : serves
+    CATEGORIES ||--o{ MENU_ITEMS : groups
+    RESTAURANT_ORDERS ||--|{ ORDER_ITEMS : contains
+    MENU_ITEMS ||--o{ ORDER_ITEMS : selected_as
+    RESTAURANT_ORDERS ||--o{ PAYMENTS : paid_by
+    BRANCHES ||--o{ BRANCH_INVENTORY : stocks
+    INVENTORY_ITEMS ||--o{ BRANCH_INVENTORY : stocked_as
+    BRANCHES ||--o{ INVENTORY_TRANSACTIONS : records
+    INVENTORY_ITEMS ||--o{ INVENTORY_TRANSACTIONS : moves
+    RESTAURANT_ORDERS ||--o{ ORDER_STATUS_HISTORY : tracks
