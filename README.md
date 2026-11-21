@@ -110,9 +110,30 @@ The editable Mermaid source is `docs/erd.mmd`.
 
 ## Synthetic data and performance evidence
 
-- `sql/10_synthetic_dataset.sql` adds 2,000 fictional orders and 4,000 order lines. All generated order notes are explicitly labelled synthetic.
-- `sql/11_performance_demo.sql` demonstrates a covering-index comparison. Capture your actual execution plans and record measured statistics in `docs/performance_analysis.md`.
-- Follow `docs/portfolio_evidence.md` to capture genuine SSMS screenshots and an optional short demo recording. Empty screenshot/demo folders are intentional until you add your own captures.
+# Performance Analysis: Covering Index
+
+## Objective
+Measure the effect of a covering nonclustered index on a branch and date-range sales query, using the synthetic dataset (2,000 orders and 4,000 order lines).
+
+## Query tested
+Daily order count and revenue for one branch over the last 90 days, from `sql/11_performance_demo.sql`.
+
+## Method
+1. Enabled `SET STATISTICS IO ON` and `SET STATISTICS TIME ON` in SSMS.
+2. Removed the existing branch/date index and ran the query (BEFORE).
+3. Created `IX_Demo_Branch_Date_Cover` on `RestaurantOrders (BranchID, OrderDate)` with `INCLUDE (TotalAmount)`, then ran the same query (AFTER).
+4. Restored the original project index afterwards.
+
+## Results
+
+| Metric | Before index | After index |
+|---|---|---|
+| Logical reads (`RestaurantOrders`) | 83 | 5 |
+| Elapsed time | 9 ms | 3 ms |
+| CPU time | 15 ms | 16 ms |
+
+## Conclusion
+The covering index reduced logical reads on `RestaurantOrders` from 83 to 5, a reduction of about 94%. Elapsed time fell from 9 ms to 3 ms. CPU time is the same within SQL Server's timer resolution (about 15 ms), and the first run also included a physical read, so logical reads are the more reliable measure at this data size. With only 2,000 orders the absolute times are tiny, but the reduction in reads shows how the index would scale as the data grows.
 
 ## Security and privacy
 
