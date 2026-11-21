@@ -6,6 +6,16 @@ A portfolio-ready relational database project for a multi-branch restaurant. It 
 
 A restaurant group needs one system to manage branches, staff, customers, menu items, orders, order line items, payments, and inventory. Managers also need reliable sales and operations reporting.
 
+## Key findings
+
+Analysis of the synthetic dataset (2,000 orders, 4,000 order lines) across branches:
+
+- **Top branch:** Riverside Branch led all branches with 738,197.50 in sales, 39.7% of total sales.
+- **Lowest-selling branch:** West End Branch recorded the lowest sales at 437,965.50, 23.6% of total sales.
+- **Top-selling item:** Masala Chai was the best-selling menu item with 1,232 units sold.
+
+The queries behind these results are in `sql/08_analysis_queries.sql`.
+
 ## Technology
 
 - Microsoft SQL Server 2019+ (SQL Server 2022 recommended)
