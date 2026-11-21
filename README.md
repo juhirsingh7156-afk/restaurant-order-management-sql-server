@@ -29,6 +29,11 @@ The queries behind these results are in `sql/08_analysis_queries.sql`.
 restaurant-order-management-sql-server/
 ├── README.md
 ├── .gitignore
+├── .github/
+│   └── workflows/
+│       └── sql-validation.yml
+├── scripts/
+│   └── deploy.sqlcmd.ps1
 ├── sql/
 │   ├── 00_create_database.sql through 09_test_cases.sql
 │   ├── 10_synthetic_dataset.sql
@@ -42,9 +47,9 @@ restaurant-order-management-sql-server/
     ├── erd.png
     ├── portfolio_evidence.md
     ├── performance_analysis.md
-    └── advanced_extensions.md
-    ├── screenshots/   
-    └── demo/          
+    ├── advanced_extensions.md
+    ├── screenshots/            # SSMS screenshots
+    └── demo/                   # optional demo video/GIF
 ```
 
 ## How to run
