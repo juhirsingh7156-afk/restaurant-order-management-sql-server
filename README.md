@@ -110,10 +110,6 @@ The editable Mermaid source is `docs/erd.mmd`.
 
 This repository is designed to use fictional demonstration data only. Never commit real customer records, passwords, API keys, connection strings, `.bak` files, database files, or screenshots containing server/user details. Review `git diff --cached` before every push.
 
-## Publish this project on GitHub
-
-1. Create a new **public** GitHub repository named `restaurant-order-management-sql-server` (do not initialize it with another README).
-2. Extract this project ZIP and open a terminal in the extracted project folder.
 3. Run:
 
 ```bash
