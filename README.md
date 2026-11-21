@@ -43,8 +43,8 @@ restaurant-order-management-sql-server/
     ├── portfolio_evidence.md
     ├── performance_analysis.md
     └── advanced_extensions.md
-    ├── screenshots/   # Add your real SSMS screenshots here
-    └── demo/          # Add your optional demo video/GIF here
+    ├── screenshots/   
+    └── demo/          
 ```
 
 ## How to run
@@ -106,8 +106,6 @@ This is a portfolio/demo database, not a production POS. The advanced extensions
 
 ## ERD
 
-![Entity relationship diagram](docs/erd.png)
-
 The editable Mermaid source is `docs/erd.mmd`.
 
 ## Synthetic data and performance evidence
@@ -131,9 +129,6 @@ git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/restaurant-order-management-sql-server.git
 git push -u origin main
 ```
-
-4. Before pushing, inspect `git status` and the staged file list. Confirm there are no real customer records, secrets, credentials, connection strings, database backups, or unredacted screenshots.
-5. After you capture your SSMS evidence, add the images under `docs/screenshots/` and the recording under `docs/demo/`, then commit and push again.
 
 Suggested GitHub repository description:
 
